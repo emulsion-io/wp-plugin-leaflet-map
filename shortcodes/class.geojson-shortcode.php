@@ -51,7 +51,7 @@ class Leaflet_Geojson_Shortcode extends Leaflet_Shortcode
         wp_enqueue_script('leaflet_ajax_geojson_js');
 
         if ($content) {
-            $content = str_replace(array("\r\n", "\n", "\r"), '<br>', $content);
+            $content = apply_filters( 'leaflet_marker_popup_geojson_content_html', $content);
             $content = htmlspecialchars($content);
         }
 
